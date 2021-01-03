@@ -116,6 +116,6 @@ console.log(result)
 
 "where" for ubications
 
-### Moods
+### Moods
 
 "or" / "and"
