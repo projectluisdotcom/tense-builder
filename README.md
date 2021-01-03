@@ -1,3 +1,5 @@
+![Tests](https://github.com/rescodeio/tense-builder/workflows/Tests/badge.svg)
+
 # Tense Builder
 
 ## Instalation
