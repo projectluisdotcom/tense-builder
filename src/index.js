@@ -76,7 +76,11 @@ TenseBuilder.prototype.andOrClassification = function(tense, type) {
     const s = tense.split(' ')
 
     if(s.find(x => x === 'and' || x === 'or') == null){
-        return tense
+        return {
+            word: tense.trim(),
+            type,
+            mood: 'and',
+        }
     }
 
     if(s.find(x => x === 'and') == null){

@@ -9,6 +9,31 @@ test('Error control', () => {
     expect(() => tenseBuilder.parse()).toThrowError(Error)
 })
 
+test('Parse without and/or', () => {
+    const tenseBuilder = new TenseBuilder()
+    tenseBuilder.config.separator = '-'
+    const result = tenseBuilder.parse('places-with-hot-climate-ubicated-in-romania')
+
+    expect(result)
+        .toStrictEqual([
+            {
+                word: 'places',
+                type: 'subject',
+                mood: 'and',
+            },
+            {
+                word: 'hot climate',
+                type: 'what',
+                mood: 'and',
+            },
+            {
+                word: 'romania',
+                type: 'where',
+                mood: 'and',
+            },
+        ])
+})
+
 test('Inverse parse with configured separator', () => {
     const tenseBuilder = new TenseBuilder()
     tenseBuilder.config.separator = '-'
